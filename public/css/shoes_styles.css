@@ -12,6 +12,11 @@ h1 {
   background-color: #ddd2a1;
   text-align: center;
 }
+h2 {
+  padding: 5px;
+  background-color: #ddd2a1;
+  text-align: center;
+}
 .add {
   width: 25%;
   margin: auto;
