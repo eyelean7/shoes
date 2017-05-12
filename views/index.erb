@@ -11,17 +11,17 @@
 <% else %>
   <h2>To add brands, click the "Add Brand" button below.</h2>
 <% end %>
-<% if false %>
+
 <% if @stores.any? %>
   <h3>Stores:</h3>
   <ul>
-    <% @stores.each() do |brand| %>
+    <% @stores.each() do |store| %>
       <li><%= store.name %></li>
     <% end %>
   </ul>
 <% else %>
   <h2>To add stores, click the "Add Store" button below.</h2>
 <% end %>
-<% end %>
+
 <a href="brand/new"><button class="btn" type="button" name="button">Add Brand</button></a>
-<a href="#"><button class="btn" type="button" name="button">Add Store</button></a>
+<a href="store/new"><button class="btn" type="button" name="button">Add Store</button></a>

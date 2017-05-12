@@ -8,8 +8,8 @@ require('./lib/contract')
 
 
 get('/') do
-# binding.pry
   @brands = Brand.all()
+  @stores = Store.all()
   erb(:index)
 end
 
@@ -22,9 +22,16 @@ post('/brands') do
   brand_price = params.fetch("brand_price")
   brand = Brand.create(:name => brand_name, :price => brand_price)
   @brands = Brand.all()
-  erb(:index)
+  redirect('/')
 end
 
-  # store_name = params.fetch("store_name")
+get('/store/new') do
+  erb(:store_form)
+end
 
-  # @stores = Store.all()
+post('/stores') do
+  store_name = params.fetch("store_name")
+  store = Store.create(:name => store_name)
+  @stores = Store.all()
+  redirect('/')
+end
