@@ -1,0 +1,12 @@
+<h1><%= @store.name %></h1>
+
+<% if @brands.any?() %>
+  <h3>Brands:</h3>
+
+  <ul>
+    <% @brands.each() do |brand| %>
+      <a href="brand/<%= brand.id() %>"><li><%= brand.name %></li></a>
+    <% end %>
+  </ul>
+
+<% end %>

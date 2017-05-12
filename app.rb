@@ -25,6 +25,12 @@ post('/brands') do
   redirect('/')
 end
 
+get('/brand/:id') do
+  @stores = Store.all()
+  @brand = Brand.find(params.fetch("id").to_i)
+  erb(:brand)
+end
+
 get('/store/new') do
   erb(:store_form)
 end
@@ -34,4 +40,10 @@ post('/stores') do
   store = Store.create(:name => store_name)
   @stores = Store.all()
   redirect('/')
+end
+
+get('/store/:id') do
+  @brands = Brand.all()
+  @store = Store.find(params.fetch("id").to_i)
+  erb(:store)
 end
