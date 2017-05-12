@@ -1,8 +1,8 @@
+<h1>OHMYGOD!shoes.</h1>
 <div class="container">
-  <h1>OHMYGOD!shoes.</h1>
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-4">
+    <div class="col-md-1"></div>
+    <div class="col-md-4 panel">
       <% if @brands.any?() %>
         <h3>Brands:</h3>
         <ul>
@@ -15,7 +15,8 @@
       <% end %>
       <a href="brand/new"><button class="btn" type="button" name="button">Add Brand</button></a>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-4 panel">
       <% if @stores.any? %>
         <h3>Stores:</h3>
         <ul>
@@ -28,6 +29,6 @@
       <% end %>
       <a href="store/new"><button class="btn" type="button" name="button">Add Store</button></a>
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-1"></div>
   </div>
 </div>

@@ -1,10 +1,28 @@
+body {
+  background-image: url('../img/shoes.jpg')
+}
+.panel {
+  background-color: #ddd2a1;
+  border: 5px solid black;
+  padding-bottom: 10px;
+  opacity: 0.95;
+}
 h1 {
+  padding: 5px;
+  background-color: #ddd2a1;
   text-align: center;
 }
 .add {
   width: 25%;
   margin: auto;
+  padding-left: 10px;
+}
+.checkbox {
+  padding-left: 20px;
 }
 a button {
   color:black;
+}
+p {
+  margin-top: 20px;
 }
