@@ -33,4 +33,11 @@
     </div>
     <div class="col-md-1"></div>
   </div>
+  <div class="row">
+    <a href="/store/<%= @store.id() %>/update"><button class="btn" type="button" name="button">Update Store</button></a>
+    <form action="/store/<%= @store.id() %>" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <button class="btn" type="submit">Delete Store</button>
+    </form>
+  </div>
 </div>

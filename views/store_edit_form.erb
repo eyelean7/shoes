@@ -1,0 +1,13 @@
+
+<h1>Update Store: <%= @store.name() %></h1>
+<div class="container">
+  <form class="add panel" action="/store/<%= @store.id() %>" method="post">
+    <h3>Details</h3>
+    <input type="hidden" name="_method" value="patch">
+    <div class="form-group">
+      <label for="update_name">Store Name:</label>
+      <input type="text" name="update_name">
+    </div>
+    <button class="btn" type="submit">Update Store</button>
+  </form>
+</div>
