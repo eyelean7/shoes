@@ -31,6 +31,15 @@ get('/brand/:id') do
   erb(:brand)
 end
 
+patch('/brand/:id') do
+  brand_id = params.fetch("id").to_i()
+  @brand = Brand.find(brand_id)
+  store_ids = params.fetch("store_ids")
+  @brand.update({:store_ids => store_ids})
+  @stores = Store.all()
+  erb(:brand)
+end
+
 get('/store/new') do
   erb(:store_form)
 end
@@ -45,5 +54,14 @@ end
 get('/store/:id') do
   @brands = Brand.all()
   @store = Store.find(params.fetch("id").to_i)
+  erb(:store)
+end
+
+patch('/store/:id') do
+  store_id = params.fetch("id").to_i()
+  @store = Store.find(store_id)
+  brand_ids = params.fetch("brand_ids")
+  @store.update({:brand_ids => brand_ids})
+  @brands = Brand.all()
   erb(:store)
 end

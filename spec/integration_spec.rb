@@ -7,6 +7,6 @@ describe('shoes', {:type => :feature}) do
     fill_in('brand_name', :with => 'Puma')
     fill_in('brand_price', :with => '90')
     click_button('Submit')
-    # expect(page).to have_content('Puma')
+    expect(page).to have_content('Puma')
   end
 end
