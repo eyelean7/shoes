@@ -2,10 +2,8 @@ class Brand < ActiveRecord::Base
   has_many :contracts
   has_many :stores, through: :contracts
 
-  validates(:name, :presence => true)
-  validates(:name, :uniqueness => true)
-  before_save(:make_title)
-  before_save(:make_price)
+  validates(:name, {:presence => true, :uniqueness => true, :length => { :maximum => 100 }})
+  before_save(:make_title, :make_price)
 
   private
 
