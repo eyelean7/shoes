@@ -17,7 +17,13 @@
         </form>
       <% end %>
     </div>
-    <div class="col-md-2"></div>
+    <div class="col-md-2">
+      <a href="/store/<%= @store.id() %>/update"><button class="btn extra" type="button" name="button">Update Store</button></a>
+      <form action="/store/<%= @store.id() %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <button class="btn extra" type="submit">Delete Store</button>
+      </form>
+    </div>
     <div class="col-md-4 panel">
       <% if @store.brands().any?() %>
         <h3>Here are all the brands this store carries:</h3>
@@ -32,12 +38,5 @@
       <a href="/"><button type="button" class="btn" name="button">Return to Main Page</button></a>
     </div>
     <div class="col-md-1"></div>
-  </div>
-  <div class="row">
-    <a href="/store/<%= @store.id() %>/update"><button class="btn" type="button" name="button">Update Store</button></a>
-    <form action="/store/<%= @store.id() %>" method="post">
-      <input name="_method" type="hidden" value="delete">
-      <button class="btn" type="submit">Delete Store</button>
-    </form>
   </div>
 </div>

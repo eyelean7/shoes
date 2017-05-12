@@ -3,7 +3,7 @@ body {
 }
 .panel {
   background-color: #ddd2a1;
-  border: 5px solid black;
+  border: 5px dashed black;
   padding-bottom: 10px;
   opacity: 0.95;
 }
@@ -24,6 +24,14 @@ h2 {
 }
 .checkbox {
   padding-left: 20px;
+}
+.extra {
+  width:100%;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: black;
+  color: #ddd2a1;
+  border: 5px dashed #ddd2a1;
 }
 a button {
   color:black;
