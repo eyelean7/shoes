@@ -1,7 +1,28 @@
 <h1><%= @store.name %></h1>
+<h2></h2>
 <div class="container">
   <div class="row">
     <div class="col-md-1"></div>
+    <div class="col-md-4 panel">
+      <% if @store.brands().any?() %>
+        <h3>Here are all the brands this store carries:</h3>
+        <ul>
+          <% @store.brands().each() do |brand| %>
+            <li><%= brand.name() %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>This store has no brands added yet.</p>
+      <% end %>
+      <a href="/"><button type="button" class="btn" name="button">Return to Main Page</button></a>
+    </div>
+    <div class="col-md-2">
+      <a href="/store/<%= @store.id() %>/update"><button class="btn extra" type="button" name="button">Update Store</button></a>
+      <form action="/store/<%= @store.id() %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <button class="btn extra" type="submit">Delete Store</button>
+      </form>
+    </div>
     <div class="col-md-4 panel">
       <% if @brands.any?() %>
       <h3>Select all brands this store carries:</h3>
@@ -16,26 +37,6 @@
           <button type="submit" class="btn" name="button">Submit</button>
         </form>
       <% end %>
-    </div>
-    <div class="col-md-2">
-      <a href="/store/<%= @store.id() %>/update"><button class="btn extra" type="button" name="button">Update Store</button></a>
-      <form action="/store/<%= @store.id() %>" method="post">
-        <input name="_method" type="hidden" value="delete">
-        <button class="btn extra" type="submit">Delete Store</button>
-      </form>
-    </div>
-    <div class="col-md-4 panel">
-      <% if @store.brands().any?() %>
-        <h3>Here are all the brands this store carries:</h3>
-        <ul>
-          <% @store.brands().each() do |brand| %>
-            <li><%= brand.name() %></li>
-          <% end %>
-        </ul>
-      <% else %>
-        <p>This store has no brands added yet.</p>
-      <% end %>
-      <a href="/"><button type="button" class="btn" name="button">Return to Main Page</button></a>
     </div>
     <div class="col-md-1"></div>
   </div>

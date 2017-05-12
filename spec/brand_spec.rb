@@ -12,6 +12,5 @@ describe(Brand) do
       puma = Brand.create(:name => 'puma', :price => 90)
       expect(puma.price).to eq(90.00)
     end
-
   end
 end

@@ -4,6 +4,20 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-4 panel">
+      <% if @brand.stores().any?() %>
+        <h3>Here are all the stores carrying this brand:</h3>
+        <ul>
+          <% @brand.stores().each() do |store| %>
+            <li><%= store.name() %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>This brand has no stores added yet.</p>
+      <% end %>
+      <a href="/"><button type="button" class="btn" name="button">Return to Main Page</button></a>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-4 panel">
       <% if @stores.any?() %>
       <h3>Select all stores carrying this brand:</h3>
         <h3>Stores:</h3>
@@ -17,20 +31,6 @@
           <button type="submit" class="btn" name="button">Submit</button>
         </form>
       <% end %>
-    </div>
-    <div class="col-md-2"></div>
-    <div class="col-md-4 panel">
-      <% if @brand.stores().any?() %>
-        <h3>Here are all the stores carrying this brand:</h3>
-        <ul>
-          <% @brand.stores().each() do |store| %>
-            <li><%= store.name() %></li>
-          <% end %>
-        </ul>
-      <% else %>
-        <p>This brand has no stores added yet.</p>
-      <% end %>
-      <a href="/"><button type="button" class="btn" name="button">Return to Main Page</button></a>
     </div>
     <div class="col-md-1"></div>
   </div>
