@@ -1,37 +1,35 @@
 <div class="container">
   <h1><%= @brand.name %></h1>
-
-  <% if @stores.any?() %>
-
-  <h3>Select all stores this brand carries:</h3>
-    <h3>Brands:</h3>
-    <form action="/brand/<%= @brand.id %>" method="post">
-      <input type="hidden" name="_method" value="patch">
-
-      <% @stores.each() do |store| %>
-        <div class="checkbox">
-          <input type="checkbox" name="store_ids[]" value="<%= store.id() %>"><%= store.name() %>
-        </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+      <% if @stores.any?() %>
+      <h3>Select all stores carrying this brand:</h3>
+        <h3>Brands:</h3>
+        <form action="/brand/<%= @brand.id %>" method="post">
+          <input type="hidden" name="_method" value="patch">
+          <% @stores.each() do |store| %>
+            <div class="checkbox">
+              <input type="checkbox" name="store_ids[]" value="<%= store.id() %>"><%= store.name() %>
+            </div>
+          <% end %>
+          <button type="submit" class="btn" name="button">Submit</button>
+        </form>
       <% end %>
-      <button type="submit" name="button">Submit</button>
-    </form>
-
-  <% end %>
-
-
-  <% if @brand.stores().any?() %>
-    <h3>Here are all the stores this brand carries:</h3>
-
-    <ul>
-      <% @brand.stores().each() do |store| %>
-        <li><%= store.name() %></li>
+    </div>
+    <div class="col-md-5">
+      <% if @brand.stores().any?() %>
+        <h3>Here are all the stores carrying this brand:</h3>
+        <ul>
+          <% @brand.stores().each() do |store| %>
+            <li><%= store.name() %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>This brand has no stores added yet.</p>
       <% end %>
-    </ul>
-  <% else %>
-    <p>This brand has no stores added yet.</p>
-  <% end %>
-
-
-  <a href="/">Return to Main Page</a>
-
+      <a href="/"><button type="button" class="btn" name="button">Return to Main Page</button></a>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
 </div>

@@ -1,27 +1,33 @@
-<h1>OHMYGOD!shoes.</h1>
-
-<% if @brands.any?() %>
-  <h3>Brands:</h3>
-
-  <ul>
-    <% @brands.each() do |brand| %>
-      <a href="brand/<%= brand.id() %>"><li><%= brand.name %></li></a>
-    <% end %>
-  </ul>
-<% else %>
-  <h2>To add brands, click the "Add Brand" button below.</h2>
-<% end %>
-
-<% if @stores.any? %>
-  <h3>Stores:</h3>
-  <ul>
-    <% @stores.each() do |store| %>
-      <a href="store/<%= store.id() %>"><li><%= store.name %></li></a>
-    <% end %>
-  </ul>
-<% else %>
-  <h2>To add stores, click the "Add Store" button below.</h2>
-<% end %>
-
-<a href="brand/new"><button class="btn" type="button" name="button">Add Brand</button></a>
-<a href="store/new"><button class="btn" type="button" name="button">Add Store</button></a>
+<div class="container">
+  <h1>OHMYGOD!shoes.</h1>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <% if @brands.any?() %>
+        <h3>Brands:</h3>
+        <ul>
+          <% @brands.each() do |brand| %>
+            <a href="brand/<%= brand.id() %>"><li><%= brand.name %></li></a>
+          <% end %>
+        </ul>
+      <% else %>
+        <h2>To add brands, click the "Add Brand" button below.</h2>
+      <% end %>
+      <a href="brand/new"><button class="btn" type="button" name="button">Add Brand</button></a>
+    </div>
+    <div class="col-md-4">
+      <% if @stores.any? %>
+        <h3>Stores:</h3>
+        <ul>
+          <% @stores.each() do |store| %>
+            <a href="store/<%= store.id() %>"><li><%= store.name %></li></a>
+          <% end %>
+        </ul>
+      <% else %>
+        <h2>To add stores, click the "Add Store" button below.</h2>
+      <% end %>
+      <a href="store/new"><button class="btn" type="button" name="button">Add Store</button></a>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
